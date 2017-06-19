@@ -1,79 +1,137 @@
-<!DOCTYPE html>
-<!-- Based on HTML5 Bones | http://html5bones.com -->
+<html><head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - Hamburger Menu - HTML, CSS &amp; jQuery </title>
+  
+  
+  
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Noto+Sans:700">
 
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	
-	<title>Page Title</title>
-	
-	<meta name="description" content="">
-	
-  <!-- Mobile-friendly viewport -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+      body{
+  font-family: 'Noto Sans', sans-serif;
+	margin:0;
+	width:100%;
+	height:100vh;
+  	background:#ffffff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+header{
+	width:100%; 
+	background:#ffffff; 
+	height:60px; 
+	line-height:60px;
+	border-bottom:1px solid #dddddd;
+}
+.hamburger{
+  background:none;
+  position:absolute;
+  top:0;
+  right:0;
+  line-height:45px;
+  padding:5px 15px 0px 15px;
+  color:#999;
+  border:0;
+  font-size:1.4em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.cross{
+  background:none;
+  position:absolute;
+  top:0px;
+  right:0;
+  padding:7px 15px 0px 15px;
+  color:#999;
+  border:0;
+  font-size:3em;
+  line-height:65px;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#f1f1f1;  position:absolute; text-align:center; font-size:12px;}
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+.menu li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px; color:#666;}
+.menu ul li a:hover {  color: #666; text-decoration:none;}
+.menu a{text-decoration:none; color:#666;}
+.menu a:hover{text-decoration:none; color:#666;}
 
-   <!-- Style sheet link -->
-	<link href="css/main.css" rel="stylesheet" media="all">
-	
+.glyphicon-home{
+  color:white; 
+  font-size:1.5em; 
+  margin-top:5px; 
+  margin:0 auto;
+}
+header{display:inline-block; font-size:12px;}
+span{padding-left:20px;}
+a{color:#336699;}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
 </head>
-<body>
 
-	<header role="banner">
-	
-		<a class="brand">Site Title or Logo</a>
-		
-		<nav role="navigation">
-			<ul class="navbar">
-				<li><a href="#">Page 1</a></li>
-				<li><a href="#">Page 2</a></li>
-				<li><a href="#">Page 3</a></li>
-				<li><a href="#">Page 4</a></li>
-			</ul>	
-		</nav>
-		
-	</header>
-	<main role="main">
-		
-		<h1>Page Heading</h1>
-    
-    <p>Use the HTML5 <code>main</code> element to wrap the central content of your page.</p>
-		
-		<h2>Page sub-heading</h2>
+<body translate="no">
 
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam, sem vitae tincidunt lobortis, nibh tellus faucibus elit, sed imperdiet enim mauris eget felis. Donec a varius sapien, at mattis nunc.</p>
-    
-    <h2>Sub-heading</h2>
-    
-    <ul>
-      <li>List item</li>
-      <li>List item</li>
-      <li>List item</li>
-      <li>List item</li>
-    </ul>
-    
-    <h2>Sub-heading</h2>
-    
-    <ol>
-      <li>List item</li>
-      <li>List item</li>
-      <li>List item</li>
-      <li>List item</li>
-    </ol>
+  <header>
+	<span>Author : <a rel="nofollow" href="http://glennsmith.me" target="_blank">Glenn Smith</a></span>
+  <button class="hamburger" style="display: none;">☰</button>
+  <button class="cross" style="display: block;">˟</button>
+</header>
 
-	</main><!-- End primary page content -->
-	<aside role="complementary">
-		
-		<h3>Secondary page content</h3>
+<div class="menu" style="display: block;">
+  <ul>
+    <a rel="nofollow" href="#"><li>LINK ONE</li></a>
+    <a rel="nofollow" href="#"><li>LINK TWO</li></a>
+    <a rel="nofollow" href="#"><li>LINK THREE</li></a>
+    <a rel="nofollow" href="#"><li>LINK FOUR</li></a>
+    <a rel="nofollow" href="#"><li>LINK FIVE</li></a>
+  </ul>
+</div>
+    <script src="//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
 
-    <p>Use the <code>aside</code> element if you need to include content that is not central to the focus of the page or is clearly of secondary importance.</p>
-			
-	</aside>
-	<footer role="contentinfo">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-		<div>Page footer content</div>
+    <script>
+    $( ".cross" ).hide();
+$( ".menu" ).hide();
+$( ".hamburger" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".hamburger" ).hide();
+$( ".cross" ).show();
+});
+});
 
-		<small>Copyright &copy; <time datetime="2013">2013</time></small>
-		
-	</footer>
-</body>
-</html>
+$( ".cross" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".cross" ).hide();
+$( ".hamburger" ).show();
+});
+});
+  //# sourceURL=pen.js
+  </script>
+
+  
+  
+
+
+
+ </body></html>
